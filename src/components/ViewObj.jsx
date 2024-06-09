@@ -1,10 +1,11 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
+import Navbar from './Navbar'
 
 const ViewObj = () => {
 
     const [product, changeProduct] = useState(
-        {"products":[]}
+        { "products": [] }
     )
 
     const fetchData = () => {
@@ -18,11 +19,11 @@ const ViewObj = () => {
         ).catch().finally()
     }
 
-useEffect(()=>{fetchData()},[])
-    
+    useEffect(() => { fetchData() }, [])
+
     return (
         <div>
-
+            <Navbar />
 
             <div className="container">
                 <div className="row">
@@ -37,24 +38,24 @@ useEffect(()=>{fetchData()},[])
 
                                     return <div className="col col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 col-xxl-3">
 
-                                <div class="card">
-                                    <img src={value.thumbnail} class="card-img-top" alt="..."></img>
-                                    <div class="card-body">
-                                        <h5 class="card-title">{value.id}</h5>
-                                        <p class="card-text">{value.title}</p>
-                                        <p class="card-text">{value.price}</p>
-                                        <a href="#" class="btn btn-primary">Add to cart</a>
+                                        <div class="card">
+                                            <img src={value.thumbnail} class="card-img-top" alt="..."></img>
+                                            <div class="card-body">
+                                                <h5 class="card-title">{value.id}</h5>
+                                                <p class="card-text">{value.title}</p>
+                                                <p class="card-text">{value.price}</p>
+                                                <a href="#" class="btn btn-primary">Add to cart</a>
+                                            </div>
+                                        </div>
+
+
+
                                     </div>
-                                </div>
-
-
-
-                            </div>
-                                 }
+                                }
 
                             )}
 
-                            
+
                         </div>
 
 
